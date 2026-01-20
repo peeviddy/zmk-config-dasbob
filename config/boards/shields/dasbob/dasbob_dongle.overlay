@@ -3,6 +3,7 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
         wakeup-source;
     };
 
@@ -11,5 +12,11 @@
         columns = <0>;
         rows = <0>;
         events = <0>;
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "DASBOB-Prospector";
+        transform = <&default_transform>;
     };
 };

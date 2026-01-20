@@ -1,10 +1,11 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
-	chosen {
-		zmk,kscan = &kscan0;
-		zmk,matrix_transform = &default_transform;
-	};
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &default_layout;
+    };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -18,7 +19,21 @@
 		>;
     };
 
+    default_layout: default_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "DASBOB-Prospector";
+
+        transform = <&default_transform>;
+
+		// we'll do this later
+        // keys  //                     w   h    x    y     rot    rx    ry
+        //     = <&key_physical_attrs 100 100    0  105       0     0     0>
+        //     , <&key_physical_attrs 100 100 1010  340       0     0     0>
+        //     , <...>;
+	};
+
 	kscan0: kscan {
+		wakeup-source;
 		compatible = "zmk,kscan-gpio-direct";
 		label = "KSCAN";
 		input-gpios =
