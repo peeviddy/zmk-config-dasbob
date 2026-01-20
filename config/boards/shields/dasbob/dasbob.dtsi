@@ -3,7 +3,9 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
+		#if defined(CONFIG_ZMK_SPLIT)
+		zmk,kscan = &kscan0;
+		#endif
         zmk,physical-layout = &default_layout;
     };
 
@@ -32,6 +34,7 @@
         //     , <...>;
 	};
 
+	#if defined(CONFIG_ZMK_SPLIT)
 	kscan0: kscan {
 		wakeup-source;
 		compatible = "zmk,kscan-gpio-direct";
@@ -60,4 +63,5 @@
 			<&pro_micro  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 		;
 	};
+	#endif
 };

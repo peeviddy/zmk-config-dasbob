@@ -1,2 +1,4 @@
 # zmk-config-dasbob
 wireless [DASBOB](https://github.com/GroooveBob/DASBOB) keyboard but with a [dongle](https://github.com/carrefinho/prospector)
+
+DASBOB is a diodeless 36-key split keyboard that I've configured to be wireless only. This particular build uses supermini nrf52840 pro micro clones for both halves and a Seeeduino XIAO nrf52840 for the dongle. This is the same setup as the fully functional Corne keyboard I built before, but the only difference is that the DASBOB is diodeless and therefore does not require the matrix stuff in ZMK. This is where my knowledge gap begins as I am trying to combine the dongle functionality with a diodeless keyboard shield.
